@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:text="Voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVoltarMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="13dp"
+        android:onClick="voltarMenu"/>
+
+    <TextView
+        android:text="Nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNome"
+        android:layout_below="@+id/editNome"
+        android:layout_alignStart="@+id/editEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editEmail"
+        android:clickable="false"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/txtNome"
+        android:layout_alignStart="@+id/txtEmail" />
+
+    <TextView
+        android:text="E-mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEmail"
+        android:layout_below="@+id/editEmail"
+        android:layout_alignStart="@+id/btnVoltarMenu" />
+
+    <TextView
+        android:text="Telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTel"
+        android:layout_alignStart="@+id/editTel"
+        android:id="@+id/txtTel" />
+
+    <TextView
+        android:text="Estado Civil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCivil"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editData"
+        android:layout_below="@+id/txtCivil"
+        android:layout_alignStart="@+id/txtCivil"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:text="Data de Nascimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtData"
+        android:layout_below="@+id/editData"
+        android:layout_alignStart="@+id/editData" />
+
+    <TextView
+        android:text="Sexo:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSexo"
+        android:layout_above="@+id/btnVoltarMenu"
+        android:layout_alignStart="@+id/btnVoltarMenu"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:text="Proximo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNotification"
+        android:onClick="Perfil_2"
+        android:layout_marginEnd="16dp"
+        android:layout_alignBaseline="@+id/btnVoltarMenu"
+        android:layout_alignBottom="@+id/btnVoltarMenu"
+        android:layout_alignParentEnd="true" />
+
+
+    <Button
+        android:text="Editar Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmail_edit"
+        android:layout_alignTop="@+id/editEmail"
+        android:layout_alignEnd="@+id/btnNotification" />
+    <Button
+        android:text="Salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSalvar_perf"
+        android:layout_alignBaseline="@+id/btnNotification"
+        android:layout_alignBottom="@+id/btnNotification"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editNome"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/txtNome" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="11dp"
+        android:id="@+id/editTel"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignStart="@+id/txtEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/txtTel"
+        android:layout_alignStart="@+id/txtTel"
+        android:layout_marginTop="11dp" />
+
+    <RadioGroup
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/txtSexo"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioG">
+
+
+        <RadioButton
+        android:text="Feminino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/raioMasc"
+        android:layout_toEndOf="@+id/txtData"
+        android:onClick="RadioBotao"
+        android:id="@+id/raioFem" />
+        <RadioButton
+        android:text="Masculino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/raioMasc"
+        android:onClick="RadioBotao"
+        android:layout_above="@+id/txtSexo"
+        android:layout_alignStart="@+id/txtSexo" />
+
+    </RadioGroup>
+
+
+</RelativeLayout>

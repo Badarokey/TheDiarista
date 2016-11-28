@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "419003510101",
+    "firebase_url": "https://thediarista.firebaseio.com",
+    "project_id": "thediarista",
+    "storage_bucket": "thediarista.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419003510101:android:7f63053ff9c9da16",
+        "android_client_info": {
+          "package_name": "com.example.gabriel.thediarista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419003510101-0bi5bbff6l8449sfni77ckgr3iakn6ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJraPzZOM64ivI7ExruQhdpxsd_ipyS7g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

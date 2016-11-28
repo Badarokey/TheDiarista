@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_perfil"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.gabriel.thediarista.Menu">
+
+
+    <TextView
+        android:text="Perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txtperfil" />
+
+    <Button
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btnlogout" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_action_settings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_set"
+        android:layout_gravity="center|right"
+        android:elevation="6dp"
+        app:pressedTranslationZ="10dp"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/icone_perfil"
+        android:id="@+id/btn_perfil"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/btn_set"
+        android:layout_alignParentEnd="true"
+        app:backgroundTint="@color/set_color"
+        android:visibility="invisible"/>
+
+    <!--botao amarelo esquerdo-->
+
+    <!--botao verde direito-->
+
+    <!--botao azul direito-->
+
+    <!--botao vermelho esquerdo-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quadrante_3"
+        android:id="@+id/btnBaixoE"
+        android:onClick="tiraFoto"
+        android:visibility="visible"
+        android:cropToPadding="false"
+        android:layout_alignTop="@+id/btnBaixoD"
+        android:layout_toEndOf="@+id/btnBaixoD"
+        android:text="IR PARA FOTO"
+        tools:paddingBottom="40dp"
+        tools:textSize="21dp"
+        tools:textColor="#FFFFFF"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quadrante_4"
+        android:id="@+id/btnBaixoD"
+        android:visibility="visible"
+        android:cropToPadding="false"
+        android:layout_below="@+id/btnCimaD"
+        android:layout_alignStart="@+id/btnCimaD"
+        android:onClick="mapa"
+        android:text="PROCURAR"
+        tools:text="PROCURAR"
+        tools:textColor="#FFFFFF"
+        tools:textSize="21dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quadrante_2"
+        android:id="@+id/btnCimaE"
+        android:visibility="visible"
+        android:cropToPadding="false"
+        android:paddingRight="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignTop="@+id/btn_perfil"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quadrante_1"
+        android:id="@+id/btnCimaD"
+        android:visibility="visible"
+        android:cropToPadding="false"
+        android:layout_alignBaseline="@+id/btnCimaE"
+        android:layout_alignBottom="@+id/btnCimaE"
+        android:layout_toStartOf="@+id/btnCimaE" />
+
+
+</RelativeLayout>
