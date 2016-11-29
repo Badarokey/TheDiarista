@@ -116,7 +116,32 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         if (view == btnLogar){
+
+
             UserLogin();
+
+            NotificationCompat.Builder notiBuilder = new NotificationCompat
+                    .Builder(Login.this)
+                    .setSmallIcon(R.drawable.icone_notification)
+                    .setTicker("Bem Vindo")
+                    .setContentTitle("Cadastro Quase Completo.")
+                    .setContentText("Obrigado por se Cadastrar");
+
+
+            Intent infoIntent = new Intent(Login.this, Menu.class);
+
+            TaskStackBuilder tStack = TaskStackBuilder.create(Login.this);
+
+            tStack.addParentStack(Menu.class);
+            tStack.addNextIntent(infoIntent);
+            PendingIntent pendingIntent = tStack.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+
+            notiBuilder.setContentIntent(pendingIntent);
+
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(noti, notiBuilder.build());
+
+            Notific = true;
 
         }
 
