@@ -23,22 +23,24 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by Gabriel on 14/11/2016.
  */
 
-public class Perfil extends AppCompatActivity implements View.OnClickListener{
+public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseauth;
+    FirebaseUser dtUser;
 
     public Button btnVoltarMenu;
-    private Button perfil_2;
+    private Button btnSalvar;
 
-    private EditText editNome;
-    private EditText editEmail;
-    private EditText editTel;
-    private EditText editData;
+    public EditText editNome;
+    public EditText editEmail;
+    public EditText editTel;
+    public EditText editData;
 
     public RadioGroup rg;
     public RadioButton radiob;
@@ -48,7 +50,7 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
     private ProgressDialog progressDialog;
 
 
-//    public NotificationManager notificationManager;
+    //    public NotificationManager notificationManager;
     boolean Notific = false;
     int noti = 1;
 
@@ -58,8 +60,8 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_perfil);
 
 
-
         btnVoltarMenu = (Button) findViewById(R.id.btnVoltarMenu);
+        btnSalvar = (Button) findViewById(R.id.btnSalvar_perf);
 
 
         final Intent menuVoltar = new Intent(this, Menu.class);
@@ -80,18 +82,14 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
         fem.setOnClickListener(Perfil.this);
 
 
-
-
     }
-
-
 
 
     public void RadioBotao(View view) {
 
         int radioBtn = rg.getCheckedRadioButtonId();
 
-        radiob = (RadioButton)findViewById(radioBtn);
+        radiob = (RadioButton) findViewById(radioBtn);
 //        switch (view.getId()){
 //            case R.id.raioMasc:
 //
@@ -103,55 +101,39 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
 //        }
     }
 
-    private void updateUser(){
+    private void updateUser() {
 
         String nome = editNome.getText().toString().trim();
         String email = editEmail.getText().toString().trim();
         String telefone = editTel.getText().toString().trim();
 
 
-
-        if(TextUtils.isEmpty(nome)){
+        if (TextUtils.isEmpty(nome)) {
             //campo nome esta vazio
             Toast.makeText(this, "Por Favor insira um Nome", Toast.LENGTH_SHORT).show();
             //parar a funçao da execuçao
             return;
         }
 
-        if(TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             //campo email esta vazio
-            Toast.makeText(this, "Por Favor insira um E-mail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por Favor Atualize o E-mail", Toast.LENGTH_SHORT).show();
             //parar a funçao da execuçao
             return;
         }
 
-        if(TextUtils.isEmpty(telefone)){
+        if (TextUtils.isEmpty(telefone)) {
             //campo senha esta vazio
             Toast.makeText(this, "Por Favor insira um telefone", Toast.LENGTH_SHORT).show();
             //parar execuçao
             return;
         }
 
+        progressDialog.setMessage("Atualizando Usuario...");
+        progressDialog.show();
 
 
         //se tiver correto mostrando barra de progresso
-
-//        progressDialog.setMessage("registrando Usuario...");
-//        progressDialog.show();
-//
-//        firebaseauth.createUserWithEmailAndPassword(email,)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if(task.isSuccessful()){
-//                            //registrado e logado. iniciando atividade de activity_perfil
-//                            finish();
-//                            startActivity(new Intent(getApplicationContext(), Menu.class));
-//                        }else{
-//                            Toast.makeText(Perfil.this, "Nao conseguiu registrar", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
 
 
     }
@@ -159,6 +141,17 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+
+    }
+
+    public void Salvar(View view) {
+        if (view == btnSalvar) {
+            updateUser();
+
+        }
+    }
+    public void Perfil_2(View view) {
+        startActivity(new Intent(this, Perfil2.class));
 
     }
 
