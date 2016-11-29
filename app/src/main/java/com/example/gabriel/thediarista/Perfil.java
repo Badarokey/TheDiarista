@@ -32,7 +32,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseauth;
-    FirebaseUser dtUser;
 
     public Button btnVoltarMenu;
     private Button btnSalvar;
@@ -144,12 +143,14 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    public void Salvar(View view) {
-        if (view == btnSalvar) {
-            updateUser();
-
-        }
-    }
+    //adicionar botao salvar ao perfil
+    
+//    public void Salvar(View view) {
+//        if (view == btnSalvar) {
+//            updateUser();
+//
+//        }
+//    }
     public void Perfil_2(View view) {
         startActivity(new Intent(this, Perfil2.class));
 
